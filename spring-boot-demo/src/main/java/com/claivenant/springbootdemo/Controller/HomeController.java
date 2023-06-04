@@ -4,6 +4,7 @@ import com.claivenant.springbootdemo.Model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/request")
 public class HomeController {
 
     @RequestMapping("/")
@@ -28,5 +29,11 @@ public class HomeController {
     public String requestParam(@RequestParam(name="fullName",required = false,defaultValue = "N/A") String name ,
     @RequestParam(required = false,defaultValue = "0") int age){
         return "Your name is  "+name+ " and your age is  "+age;
+    }
+    @GetMapping
+    public String printName(@RequestParam(required = false,defaultValue ="No Name"
+    ) String name ,@RequestParam String gender ){
+        return "My gender is "+gender+ " and my Age is "+name;
+
     }
 }

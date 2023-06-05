@@ -4,7 +4,6 @@ import com.claivenant.springbootdemo.Model.User;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/request")
 public class HomeController {
 
     @RequestMapping("/")
@@ -20,8 +19,8 @@ public class HomeController {
         return user;
 
     }
-    @GetMapping("/{id}/{id2}")
-    public String pathVariable(@PathVariable String id, @PathVariable("id") String name){
+    @GetMapping("/request/{id}/{id2}")
+    public String pathVariable(@PathVariable String id, @PathVariable("id2") String name){
         return " The path variale is : "+ id +" " +name;
     }
 
@@ -30,10 +29,10 @@ public class HomeController {
     @RequestParam(required = false,defaultValue = "0") int age){
         return "Your name is  "+name+ " and your age is  "+age;
     }
-    @GetMapping
-    public String printName(@RequestParam(required = false,defaultValue ="No Name"
+    @GetMapping("/name")
+    public String printName(@RequestParam(required = false, defaultValue ="No Name"
     ) String name ,@RequestParam String gender ){
-        return "My gender is "+gender+ " and my Age is "+name;
+        return "My name is "+name+ " and my gender is "+gender;
 
     }
 }

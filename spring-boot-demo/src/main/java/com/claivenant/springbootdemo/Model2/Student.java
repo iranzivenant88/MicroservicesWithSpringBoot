@@ -1,4 +1,4 @@
-package com.claivenant.springbootdemo.Model;
+package com.claivenant.springbootdemo.Model2;
 
 
 public class Student {
